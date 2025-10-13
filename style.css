@@ -15,7 +15,13 @@ header {
   color: #fff;
   padding: 20px 40px;
   border-bottom: #ff2b2b solid 2px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
+
 header a {
   text-decoration: none;
 }
@@ -42,6 +48,9 @@ nav a.active {
   padding-bottom: 3px;
 }
 
+main {
+  margin-top: 40px;
+}
 
 /* === Hero Section === */
 .hero {
@@ -139,16 +148,38 @@ a {
 @keyframes blinkCursor {
   50% { border-color: transparent; }
 }
+
 @media (max-width: 600px) {
+  header h1 {
+    font-size: 115%;
+  }
+
   header {
     flex-direction: column;
+    align-items: center;
     text-align: center;
+    padding: 15px 10px;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: nowrap; /* prevent wrapping */
+    gap: 12px; /* space between links */
+    justify-content: center;
+    overflow-x: auto; /* allows scroll if needed */
   }
 
   nav a {
-    display: block;
-    margin: 10px 0;
+    display: inline-block;
+    font-size: 0.95rem;
+    padding: 8px 5px;
+    white-space: nowrap;
   }
+
+  main {
+    margin-top: 15%;
+  }
+
 
   .hero img {
     width: 140px;
@@ -423,23 +454,177 @@ a {
 }
 
 
+@keyframes fillBar {
+  from {
+    width: 0%;
+  }
+  to {
+    width: var(--target-width);
+  }
+}
+
 .fill {
   height: 100%;
-  width: 0; /* Start empty */
+  width: 0%;
   background: linear-gradient(90deg, #ff1a1a, #cc0000);
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-  transition: width 1.5s ease; /* Smooth fill animation */
-  opacity: 0; /* hide before animation starts */
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 .fill.active {
-  opacity: 1; /* visible once animation starts */
+  opacity: 1;
+  animation: fillBar 1.5s ease forwards;
 }
-
 
 @media (max-width: 600px) {
   .skills-section {
+    padding: 60px 20px;
+  }
+}
+/*Education Page*/
+.education-section {
+  padding: 80px 40px;
+  background: #000;
+  color: #fff;
+  text-align: center;
+}
+
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.edu-card {
+  background: #111;
+  border: 2px solid #ff2b2b;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.edu-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
+}
+
+.edu-card h3 {
+  color: #ff2b2b;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.school {
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.date {
+  color: #aaa;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.details {
+  color: #ccc;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .education-section {
+    padding: 60px 20px;
+  }
+}
+/* === Contact Page === */
+.contact-section {
+  padding: 80px 40px;
+  background: #000;
+  color: #fff;
+  text-align: center;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 40px;
+  margin-top: 50px;
+  align-items: start;
+}
+
+.contact-form {
+  background: #111;
+  border: 2px solid #ff2b2b;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.1);
+  text-align: left;
+}
+
+.contact-form label {
+  display: block;
+  color: #ff2b2b;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  background: #222;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border: 1px solid #ff2b2b;
+}
+
+.contact-info {
+  background: #111;
+  border: 2px solid #ff2b2b;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.1);
+  text-align: left;
+}
+
+.contact-info h3 {
+  color: #ff2b2b;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.contact-info a {
+  color: #ff2b2b;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .contact-section {
     padding: 60px 20px;
   }
 }

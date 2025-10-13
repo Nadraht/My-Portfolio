@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-// ====== SKILLS PAGE PROGRESS BAR ANIMATION + PERCENT COUNTER ======
+// ====== SKILLS PAGE BAR ANIMATION (KEYFRAME VERSION) ======
 document.addEventListener("DOMContentLoaded", () => {
   const fills = document.querySelectorAll(".fill");
 
@@ -71,27 +71,22 @@ document.addEventListener("DOMContentLoaded", () => {
           if (entry.isIntersecting) {
             const fill = entry.target;
             const percentText = fill.parentElement.querySelector(".percent");
+            const targetPercent = parseInt(fill.dataset.percent);
 
-            // ✅ Capture target width before resetting
-            const targetWidth = parseInt(fill.style.width);
+            // Use CSS variable for keyframe target
+            fill.style.setProperty("--target-width", targetPercent + "%");
+            fill.classList.add("active");
 
-            // Reset everything before starting
-            fill.style.width = "0%";
-            percentText.textContent = "0%";
-            fill.classList.add("active"); // make it visible
-
-            let currentWidth = 0;
-            const speed = 15; // speed of counting (ms)
-
+            // Count up number
+            let count = 0;
             const interval = setInterval(() => {
-              if (currentWidth >= targetWidth) {
+              if (count >= targetPercent) {
                 clearInterval(interval);
               } else {
-                currentWidth++;
-                fill.style.width = currentWidth + "%";
-                percentText.textContent = currentWidth + "%";
+                count++;
+                percentText.textContent = count + "%";
               }
-            }, speed);
+            }, 15);
 
             observer.unobserve(fill);
           }
@@ -103,4 +98,53 @@ document.addEventListener("DOMContentLoaded", () => {
     fills.forEach(fill => observer.observe(fill));
   }
 });
+//Contact Page
+document.addEventListener("DOMContentLoaded", () => {
+  const contactForm = document.querySelector(".contact-form");
 
+  if (contactForm) {
+    contactForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      // === Basic validation ===
+      if (!name || !email || !message) {
+        alert("⚠️ Please fill in all required fields.");
+        return;
+      }
+
+      // Email validation (simple regex)
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        alert("❌ Please enter a valid email address.");
+        return;
+      }
+
+      // Phone validation (basic international format check)
+      const phonePattern = /^\+?\d{7,15}$/;
+      if (!phonePattern.test(phone)) {
+        alert("📞 Please enter a valid phone number (with country code).");
+        return;
+      }
+
+      // === Send via Formspree ===
+      const formData = new FormData(contactForm);
+      const response = await fetch(contactForm.action, {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      });
+
+      if (response.ok) {
+        alert("✅ Message sent successfully!");
+        contactForm.reset();
+      } else {
+        alert("❌ Something went wrong. Please try again.");
+      }
+    });
+  }
+});
