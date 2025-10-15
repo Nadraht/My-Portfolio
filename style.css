@@ -94,6 +94,64 @@ main {
   max-width: 600px;
   margin: 20px auto;
 }
+/* === GLITCH EFFECT === */
+.glitch {
+  position: relative;
+  color: #00ff88;
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 2.2rem;
+  text-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88;
+  animation: flicker 3s infinite alternate;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  color: #ff2b2b;
+  clip: rect(0, 0, 0, 0);
+}
+
+.glitch::before {
+  animation: glitchTop 2.5s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+  animation: glitchBottom 2.5s infinite linear alternate-reverse;
+}
+
+@keyframes glitchTop {
+  0% { clip: rect(0, 9999px, 0, 0); transform: translate(-2px, -2px); }
+  20% { clip: rect(0, 9999px, 10px, 0); transform: translate(2px, -1px); }
+  40% { clip: rect(0, 9999px, 5px, 0); transform: translate(-1px, 1px); }
+  60% { clip: rect(0, 9999px, 8px, 0); transform: translate(1px, 2px); }
+  80% { clip: rect(0, 9999px, 3px, 0); transform: translate(2px, -1px); }
+  100% { clip: rect(0, 9999px, 10px, 0); transform: translate(-1px, 1px); }
+}
+
+@keyframes glitchBottom {
+  0% { clip: rect(90px, 9999px, 100px, 0); transform: translate(2px, 2px); }
+  20% { clip: rect(80px, 9999px, 90px, 0); transform: translate(-2px, 1px); }
+  40% { clip: rect(85px, 9999px, 95px, 0); transform: translate(1px, -1px); }
+  60% { clip: rect(75px, 9999px, 85px, 0); transform: translate(-1px, 2px); }
+  80% { clip: rect(88px, 9999px, 98px, 0); transform: translate(1px, 1px); }
+  100% { clip: rect(90px, 9999px, 100px, 0); transform: translate(-2px, -2px); }
+}
+
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+  }
+  20%, 24%, 55% {
+    opacity: 0.5;
+  }
+}
 
 /* === CTA Buttons === */
 .cta {
@@ -159,7 +217,7 @@ a {
 
 @media (max-width: 600px) {
   header h1 {
-    font-size: 100%;
+    font-size: 60%;
   }
 
   header {
@@ -189,6 +247,13 @@ a {
     margin-top: 15%;
   }
 
+  main .skills-section, 
+  main .projects-section, 
+  main .education-section, 
+  main .contact-section {
+    margin-top: 40px;
+  }
+
   .hero img {
     width: 140px;
     height: 140px;
@@ -203,6 +268,27 @@ a {
     font-size: 0.9rem;
   }
 }
+/* === Responsive Glitch Text === */
+@media (max-width: 768px) {
+  .glitch {
+    font-size: 1.8rem;
+    letter-spacing: 1.2px;
+    text-shadow: 0 0 6px #00ff88, 0 0 12px #00ff88;
+  }
+
+  .glitch::before,
+  .glitch::after {
+    display: none; /* optional - removes the split flicker lines on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .glitch {
+    font-size: 1.4rem;
+    text-shadow: 0 0 4px #00ff88;
+  }
+}
+
 /* === Projects Page === */
 .projects-section {
   padding: 80px 40px;
