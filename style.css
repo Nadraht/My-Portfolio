@@ -97,14 +97,19 @@ main {
 /* === GLITCH EFFECT === */
 .glitch {
   position: relative;
-  color: #00ff88;
-  font-family: 'Orbitron', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 2.2rem;
-  text-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88;
-  animation: flicker 3s infinite alternate;
+  display: inline-block;
+  color: #00ff99; /* neon green */
+  /*font-family: 'Orbitron', monospace;*/
+  font-family: 'Orbitron', sans-serif; 
+  font-weight: 700;
+  letter-spacing: 1px;
+  animation: flicker 2s infinite;
+  text-shadow:
+    0 0 3px #00ff99,
+    0 0 7px #00ff99,
+    0 0 10px #00ff99;
 }
+
 
 .glitch::before,
 .glitch::after {
