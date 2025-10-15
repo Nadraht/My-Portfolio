@@ -100,7 +100,6 @@ main {
   display: inline-block;
   color: #00ff99; /* neon green */
   font-family: 'Orbitron', monospace;
-  /*font-family: 'Orbitron', sans-serif; */
   font-weight: 700;
   letter-spacing: 1px;
   animation: flicker 2s infinite;
