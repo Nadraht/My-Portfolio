@@ -102,7 +102,7 @@ main {
   font-family: 'Orbitron', monospace;
   font-weight: 700;
   letter-spacing: 1px;
-  animation: flicker 2s infinite;
+  animation: flicker 4s infinite;
   text-shadow:
     0 0 3px #00ff99,
     0 0 7px #00ff99,
