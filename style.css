@@ -185,8 +185,8 @@ a {
     height: 140px;
   }
 
-  .hero h2 {
-    font-size: 100%;
+  .hero h2, #typing-text {
+    font-size: 0.9rem;
   }
 
   .btn {
