@@ -14,7 +14,7 @@ header {
   background-color: #000; /* black header */
   color: #fff;
   padding: 20px 40px;
-  border-bottom: green solid 2px;
+  border-bottom: #00ff88 solid 2px;
   position: fixed;
   top: 0;
   left: 0;
@@ -27,7 +27,7 @@ header a {
 }
 header h1 {
   font-size: 1.4rem;
-  color: green; /* bright red accent */
+  color: #00ff88; 
 }
 
 nav a {
@@ -39,12 +39,12 @@ nav a {
 }
 
 nav a:hover {
-  color: green; /* red hover */
+  color: #00ff88; 
 }
 
 nav a.active {
-  color: green;
-  border-bottom: 2px solid green;
+  color: #00ff88;
+  border-bottom: 2px solid #00ff88;
   padding-bottom: 3px;
 }
 
@@ -57,7 +57,7 @@ main {
   text-align: center;
   padding: 100px 20px;
   background: linear-gradient(to bottom right, #111, #000); /* dark background */
-  color: #fff;
+  color: #f2f2f2;
 }
 
 .hero img {
@@ -66,12 +66,13 @@ main {
   border-radius: 50%;
   object-fit: cover;
   margin-top: 20px;
-  border: 3px solid green; /* red border */
+  border: 3px solid #00ff88;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
 }
 
 .hero h2 {
   font-size: 2rem;
-  color: green; /* red heading */
+  color: #ff2b2b; /* red heading */
 }
 
 .hero .tagline {
@@ -98,19 +99,19 @@ main {
   padding: 12px 30px;
   margin: 10px;
   color: #fff;
-  background: linear-gradient(90deg, #5bff1a, #00cc33);
+  background: linear-gradient(90deg, #ff2b2b, #cc0000);
   border: none;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
   letter-spacing: 0.5px;
-  box-shadow: 0 4px 10px rgba(0, 255, 13, 0.3);
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
   transition: all 0.3s ease;
 }
 
 .btn:hover {
-  background: linear-gradient(90deg, #11cc00, #009926);
-  box-shadow: 0 0 15px rgba(0, 255, 64, 0.6);
+  background: linear-gradient(90deg, #00cc66, #00ff88);
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.6);
   transform: scale(1.05);
 }
 
@@ -121,7 +122,7 @@ footer {
   text-align: center;
   padding: 15px;
   font-size: 0.9rem;
-  border-top: #2bff4e solid 2px;
+  border-top: #00ff88 solid 2px;
 }
 
 /* === Smooth Scrolling & Links === */
@@ -135,9 +136,9 @@ a {
 
 #typing-text {
   font-size: 2.3rem;
-  color: #2bff3d;
-  text-shadow: 0 0 10px rgba(0, 255, 64, 0.5);
-  border-right: 3px solid #3cff46;
+  color: #00ff88;
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.6);
+  border-right: 3px solid #00ff88;
   white-space: nowrap;
   overflow: hidden;
   width: fit-content;
@@ -151,7 +152,7 @@ a {
 
 @media (max-width: 600px) {
   header h1 {
-    font-size: 105%;
+    font-size: 100%;
   }
 
   header {
@@ -174,6 +175,7 @@ a {
     font-size: 0.95rem;
     padding: 8px 5px;
     white-space: nowrap;
+    margin-right: 10px;
   }
 
   main {
@@ -203,7 +205,7 @@ a {
 }
 
 .page-title {
-  color: #2bff3d;
+  color: #ff2b2b;
   font-size: 2rem;
   margin-bottom: 15px;
 }
@@ -223,16 +225,16 @@ a {
 
 .project-card {
   background: #111;
-  border: 2px solid #4eff2b;
+  border: 2px solid #00ff88;
   border-radius: 15px;
   padding: 25px;
-  box-shadow: 0 0 20px rgba(255, 0, 0, 0.1);
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .project-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
+  box-shadow: 0 0 25px rgba(0, 255, 136, 0.4);
 }
 
 .project-card {
@@ -265,17 +267,17 @@ a {
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 15px;
-  border: 1px solid #2bff36;
+  border: 1px solid #00ff88;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-img:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(0, 255, 34, 0.4);
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
 }
 
 .project-card h3 {
-  color: #3dff2b;
+  color: #ff2b2b;
   font-size: 1.3rem;
   margin-bottom: 10px;
 }
@@ -303,12 +305,12 @@ a {
 
 .btn.secondary {
   background: transparent;
-  border: 1px solid #2bff3d;
-  color: #2bff3d;
+  border: 1px solid #00ff88;
+  color: #00ff88;
 }
 
 .btn.secondary:hover {
-  background: #2bff3d;
+  background: #00ff88;
   color: #fff;
 }
 
@@ -317,7 +319,7 @@ a {
 }
 .back-home a {
   display: inline-block;
-  background: linear-gradient(90deg, #1aff39, #00cc00);
+  background: linear-gradient(90deg, #00ff88, #00cc66);
   color: #fff;
   padding: 12px 30px;
   margin-top: 60px;
@@ -325,13 +327,13 @@ a {
   text-decoration: none;
   font-weight: 600;
   letter-spacing: 0.5px;
-  box-shadow: 0 4px 10px rgba(0, 255, 64, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 255, 136, 0.4);
   transition: all 0.3s ease;
 }
 
 .back-home a:hover {
-  background: linear-gradient(90deg, #00cc1b, #009921);
-  box-shadow: 0 0 15px rgba(0, 255, 13, 0.6);
+  background: linear-gradient(90deg, #00cc66, #00ff88);
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.7);
   transform: scale(1.05);
 }
 
@@ -366,9 +368,9 @@ a {
 .lightbox-content {
   max-width: 90%;
   max-height: 80%;
-  border: 2px solid #2bff3d;
+  border: 2px solid #00ff88;
   border-radius: 10px;
-  box-shadow: 0 0 25px rgba(0, 255, 34, 0.4);
+  box-shadow: 0 0 25px rgba(0, 255, 136, 0.4);
 }
 
 .close {
@@ -383,7 +385,7 @@ a {
 }
 
 .close:hover {
-  color: #2bff3d;
+  color: #00ff88;
 }
 
 /* === Skills Page === */
@@ -403,10 +405,10 @@ a {
 
 .skill-category {
   background: #111;
-  border: 2px solid #2bff3d;
+  border: 2px solid #00ff88;
   border-radius: 15px;
   padding: 25px;
-  box-shadow: 0 0 20px rgba(0, 255, 21, 0.1);
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -416,7 +418,7 @@ a {
 }
 
 .skill-category h3 {
-  color: #2bff3d;
+  color: #ff2b2b;
   font-size: 1.4rem;
   margin-bottom: 20px;
 }
@@ -465,9 +467,9 @@ a {
 .fill {
   height: 100%;
   width: 0%;
-  background: linear-gradient(90deg, #1aff53, #00cc3d);
+  background: linear-gradient(90deg, #00ff88, #00cc66);
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 255, 13, 0.5);
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
   opacity: 0;
   transition: opacity 0.5s ease;
 }
@@ -499,21 +501,21 @@ a {
 
 .edu-card {
   background: #111;
-  border: 2px solid #2bff3d;
+  border: 2px solid #00ff88;
   border-radius: 15px;
   padding: 25px;
-  box-shadow: 0 0 20px rgba(0, 255, 34, 0.1);
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: left;
 }
 
 .edu-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 0 25px rgba(0, 255, 85, 0.4);
+  box-shadow: 0 0 25px rgba(0, 255, 136, 0.4);
 }
 
 .edu-card h3 {
-  color: #2bff3d;
+  color: #00ff88;
   font-size: 1.3rem;
   margin-bottom: 10px;
 }
@@ -559,16 +561,16 @@ a {
 
 .contact-form {
   background: #111;
-  border: 2px solid #2bff3d;
+  border: 2px solid #00ff88;
   border-radius: 15px;
   padding: 30px;
-  box-shadow: 0 0 20px rgba(0, 255, 13, 0.1);
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.1);
   text-align: left;
 }
 
 .contact-form label {
   display: block;
-  color: #2bff3d;
+  color: #00ff88;
   margin-bottom: 8px;
   font-weight: 600;
 }
@@ -579,7 +581,7 @@ a {
   padding: 12px;
   margin-bottom: 20px;
   background: #222222;
-  border: none;
+  border: #00ff88;
   border-radius: 10px;
   color: #fff;
   font-size: 1rem;
@@ -589,20 +591,21 @@ a {
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border: 1px solid #2bff3d;
+  border: 1px solid #ff2b2b;
+  box-shadow: 0 0 10px rgba(255, 43, 43, 0.4);
 }
 
 .contact-info {
   background: #111;
-  border: 2px solid #2bff3d;
+  border: 2px solid #00ff88;
   border-radius: 15px;
   padding: 30px;
-  box-shadow: 0 0 20px rgba(0, 255, 21, 0.1);
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.1);
   text-align: left;
 }
 
 .contact-info h3 {
-  color: #2bff3d;
+  color: #00ff88;
   margin-bottom: 20px;
 }
 
@@ -613,13 +616,15 @@ a {
 }
 
 .contact-info a {
-  color: #2bff3d;
+  color: #00ff88;
   text-decoration: none;
   transition: 0.3s;
 }
 
 .contact-info a:hover {
   text-decoration: underline;
+  color: #ff2b2b;
+
 }
 
 @media (max-width: 600px) {
