@@ -251,7 +251,7 @@ a {
   main .projects-section, 
   main .education-section, 
   main .contact-section {
-    margin-top: 80px;
+    margin-top: 20%;
   }
 
   .hero img {
