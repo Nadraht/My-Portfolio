@@ -151,7 +151,7 @@ a {
 
 @media (max-width: 600px) {
   header h1 {
-    font-size: 115%;
+    font-size: 100%;
   }
 
   header {
@@ -164,9 +164,9 @@ a {
   nav {
     display: flex;
     flex-wrap: nowrap; /* prevent wrapping */
-    gap: 12px; /* space between links */
+    gap: 10px; /* space between links */
     justify-content: center;
-    overflow-x: auto; /* allows scroll if needed */
+    overflow-x: hidden; /* allows scroll if needed */
   }
 
   nav a {
@@ -186,7 +186,7 @@ a {
   }
 
   .hero h2 {
-    font-size: 0.9 rem;
+    font-size: 100%;
   }
 
   .btn {
